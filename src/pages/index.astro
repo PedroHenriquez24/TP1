@@ -88,6 +88,40 @@ footer {
   color: rgba(255,255,255,0.7);
   background: transparent;
 }
+.color-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1vh 0;
+  cursor: pointer;
+}
+
+.color-box {
+  width: 4vh;
+  height: 4vh;
+  border-radius: 0.8vh;
+  border: 0.2vh solid #ccc;
+}
+#toast {
+  position: fixed;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1.5vh 3vw;
+  border-radius: 1vh;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.3s;
+}
+
+#toast.show {
+  opacity: 1;
+}
     </style>
   </head>
 <!-- HTML -->
@@ -97,11 +131,19 @@ footer {
     </header>
 
     <main>
+		<div id="toast">Copiado!</div>
 <section class="card">
   <p>Colores actuales:</p>
 
-  <p id="color1">Color 1: #667eea</p>
-  <p id="color2">Color 2: #764ba2</p>
+  <div class="color-info">
+	<span id="color1-text">Color 1: #667eea</span>
+	<div id="color1-box" class="color-box"></div>
+  </div>
+  
+  <div class="color-info">
+	<span id="color2-text">Color 2: #764ba2</span>
+	<div id="color2-box" class="color-box"></div>
+  </div>
   <div class="button-group">
 	<button id="btn-color1">Cambiar Color 1</button>
 	<button id="btn-color2">Cambiar Color 2</button>
@@ -110,46 +152,75 @@ footer {
     </main>
 
     <footer>
-      <p>Proyecto TP1 - Astro</p>
+      <p>TP1 - Astro (el Juego)</p>
     </footer>
 <!-- JavaScript -->
-	<script>
-  let color1 = "#667eea";
-  let color2 = "#764ba2";
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+	  let color1 = "#667eea";
+	  let color2 = "#764ba2";
+  
+	  const toast = document.getElementById("toast");
 
-  const btn1 = document.getElementById("btn-color1");
-  const btn2 = document.getElementById("btn-color2");
+	  const btn1 = document.getElementById("btn-color1");
+	  const btn2 = document.getElementById("btn-color2");
+  
+	  const text1 = document.getElementById("color1-text");
+	  const text2 = document.getElementById("color2-text");
+  
+	  const box1 = document.getElementById("color1-box");
+	  const box2 = document.getElementById("color2-box");
+  
+	  function generarColor() {
+		const letras = "0123456789ABCDEF";
+		let color = "#";
+  
+		for (let i = 0; i < 6; i++) {
+		  color += letras[Math.floor(Math.random() * 16)];
+		}
+  
+		return color;
+	  }
+  
+	  function actualizarFondo() {
+		document.body.style.background =
+		  "linear-gradient(135deg, " + color1 + ", " + color2 + ")";
+	  }
+  
+	  function copiarColor(color) {
+  navigator.clipboard.writeText(color);
 
-  const text1 = document.getElementById("color1");
-  const text2 = document.getElementById("color2");
+  toast.textContent = "Copiado: " + color;
+  toast.classList.add("show");
 
-  function generarColor() {
-    const letras = "0123456789ABCDEF";
-    let color = "#";
-
-    for (let i = 0; i < 6; i++) {
-      color += letras[Math.floor(Math.random() * 16)];
-    }
-
-    return color;
-  }
-
-  function actualizarFondo() {
-    document.body.style.background =
-      "linear-gradient(135deg, " + color1 + ", " + color2 + ")";
-  }
-
-  btn1.addEventListener("click", () => {
-    color1 = generarColor();
-    text1.textContent = "Color 1: " + color1;
-    actualizarFondo();
-  });
-
-  btn2.addEventListener("click", () => {
-    color2 = generarColor();
-    text2.textContent = "Color 2: " + color2;
-    actualizarFondo();
-  });
-</script>
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 1500);
+}
+  
+	  btn1.addEventListener("click", () => {
+		color1 = generarColor();
+		text1.textContent = "Color 1: " + color1;
+		box1.style.backgroundColor = color1;
+		actualizarFondo();
+	  });
+  
+	  btn2.addEventListener("click", () => {
+		color2 = generarColor();
+		text2.textContent = "Color 2: " + color2;
+		box2.style.backgroundColor = color2;
+		actualizarFondo();
+	  });
+  
+	  text1.addEventListener("click", () => copiarColor(color1));
+	  text2.addEventListener("click", () => copiarColor(color2));
+  
+	  box1.addEventListener("click", () => copiarColor(color1));
+	  box2.addEventListener("click", () => copiarColor(color2));
+  
+	  box1.style.backgroundColor = color1;
+	  box2.style.backgroundColor = color2;
+	});
+  </script>
   </body>
 </html>
