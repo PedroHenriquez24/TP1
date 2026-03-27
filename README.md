@@ -1,43 +1,92 @@
-# Astro Starter Kit: Minimal
+Link:
+https://tp-1-virid-xi.vercel.app/
 
-```sh
-npm create astro@latest -- --template minimal
+# 🎨 Generador de Colores - TP1
+
+## 📌 Descripción
+
+Este proyecto consiste en una aplicación web desarrollada con Astro que permite generar colores aleatorios y visualizarlos en un fondo degradado.
+
+El usuario puede modificar cada uno de los colores del degradado de manera independiente y visualizar el resultado en tiempo real.
+
+---
+
+## 🚀 Funcionalidades
+
+* Generación de colores aleatorios
+* Fondo con gradiente dinámico
+* Visualización de colores en formato hexadecimal
+* Vista previa de cada color en estado puro
+* Copiado de colores al portapapeles
+* Feedback visual mediante notificaciones (toast)
+* Diseño responsive
+* Modo oscuro (dark mode)
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+* Astro
+* HTML5 (semántico)
+* CSS3 (Flexbox, responsive, animaciones)
+* JavaScript (DOM, eventos, localStorage)
+
+---
+
+## 📂 Estructura del proyecto
+
+```id="9r1r33"
+src/
+  pages/
+    index.astro
+public/
+package.json
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## ⚙️ Cómo ejecutar el proyecto
 
-Inside of your Astro project, you'll see the following folders and files:
+1. Clonar el repositorio:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```id="1cgdcf"
+git clone https://github.com/TU-USUARIO/TP1.git
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+2. Instalar dependencias:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```id="71hc6d"
+npm install
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+3. Ejecutar en modo desarrollo:
 
-## 🧞 Commands
+```id="tjyz57"
+npm run dev
+```
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🌐 Deploy
 
-## 👀 Want to learn more?
+El proyecto está disponible en:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+👉 PEGAR ACA TU LINK DE VERCEL
+
+---
+
+## 📚 Conceptos aplicados
+
+* Uso de HTML semántico
+* Diseño responsive
+* Manipulación del DOM con JavaScript
+* Manejo de eventos
+* Uso de localStorage
+* Organización de proyecto en Astro
+* Uso de Git y commits progresivos
+
+---
+
+## 👨‍💻 Autor
+
+Trabajo práctico realizado por [Tu Nombre]
