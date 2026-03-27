@@ -1,7 +1,7 @@
 ---
 
 ---
-
+<!-- CSS -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -67,11 +67,20 @@ button {
 
   cursor: pointer;
   transition: transform 0.2s, opacity 0.2s;
+
+  width: 100%;
 }
 
 button:hover {
   transform: scale(1.05);
   opacity: 0.9;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  margin-top: 3vh;
 }
 
 footer {
@@ -81,21 +90,66 @@ footer {
 }
     </style>
   </head>
-
+<!-- HTML -->
   <body>
     <header>
       <h1>Generador de Colores 🎨</h1>
     </header>
 
     <main>
-      <section class="card">
-        <p>Haz click en el botón para generar un color.</p>
-        <button id="btn-color">Generar color</button>
-      </section>
+<section class="card">
+  <p>Colores actuales:</p>
+
+  <p id="color1">Color 1: #667eea</p>
+  <p id="color2">Color 2: #764ba2</p>
+  <div class="button-group">
+	<button id="btn-color1">Cambiar Color 1</button>
+	<button id="btn-color2">Cambiar Color 2</button>
+  </div>
+</section>
     </main>
 
     <footer>
       <p>Proyecto TP1 - Astro</p>
     </footer>
+<!-- JavaScript -->
+	<script>
+  let color1 = "#667eea";
+  let color2 = "#764ba2";
+
+  const btn1 = document.getElementById("btn-color1");
+  const btn2 = document.getElementById("btn-color2");
+
+  const text1 = document.getElementById("color1");
+  const text2 = document.getElementById("color2");
+
+  function generarColor() {
+    const letras = "0123456789ABCDEF";
+    let color = "#";
+
+    for (let i = 0; i < 6; i++) {
+      color += letras[Math.floor(Math.random() * 16)];
+    }
+
+    return color;
+  }
+
+  function actualizarFondo() {
+    document.body.style.background =
+      "linear-gradient(135deg, " + color1 + ", " + color2 + ")";
+  }
+
+  btn1.addEventListener("click", () => {
+    color1 = generarColor();
+    text1.textContent = "Color 1: " + color1;
+    actualizarFondo();
+  });
+
+  btn2.addEventListener("click", () => {
+    color2 = generarColor();
+    text2.textContent = "Color 2: " + color2;
+    actualizarFondo();
+  });
+</script>
   </body>
 </html>
