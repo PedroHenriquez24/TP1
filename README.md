@@ -45,13 +45,19 @@ package.json
 
 ## ⚙️ Cómo ejecutar el proyecto
 
-1. Instalar dependencias:
+1. Clonar el repositorio:
+
+```id="1cgdcf"
+git clone https://github.com/PedroHenriquez24/TP1.git
+```
+
+2. Instalar dependencias:
 
 ```id="71hc6d"
 npm install
 ```
 
-2. Ejecutar en modo desarrollo:
+3. Ejecutar en modo desarrollo:
 
 ```id="tjyz57"
 npm run dev
