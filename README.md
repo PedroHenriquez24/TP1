@@ -1,6 +1,3 @@
-Link:
-https://tp-1-virid-xi.vercel.app/
-
 # 🎨 Generador de Colores - TP1
 
 ## 📌 Descripción
@@ -30,6 +27,7 @@ El usuario puede modificar cada uno de los colores del degradado de manera indep
 * HTML5 (semántico)
 * CSS3 (Flexbox, responsive, animaciones)
 * JavaScript (DOM, eventos, localStorage)
+* ChatGPT para aprender a utilizar estas herramientas en profundidad
 
 ---
 
@@ -47,19 +45,13 @@ package.json
 
 ## ⚙️ Cómo ejecutar el proyecto
 
-1. Clonar el repositorio:
-
-```id="1cgdcf"
-git clone https://github.com/TU-USUARIO/TP1.git
-```
-
-2. Instalar dependencias:
+1. Instalar dependencias:
 
 ```id="71hc6d"
 npm install
 ```
 
-3. Ejecutar en modo desarrollo:
+2. Ejecutar en modo desarrollo:
 
 ```id="tjyz57"
 npm run dev
@@ -71,7 +63,7 @@ npm run dev
 
 El proyecto está disponible en:
 
-👉 PEGAR ACA TU LINK DE VERCEL
+👉 https://tp-1-3nnd.vercel.app/
 
 ---
 
@@ -89,4 +81,4 @@ El proyecto está disponible en:
 
 ## 👨‍💻 Autor
 
-Trabajo práctico realizado por [Tu Nombre]
+Trabajo práctico realizado por Pedro Henríquez
